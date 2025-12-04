@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cozy UI Library</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              paper: 'var(--color-paper)',
+              surface: 'var(--color-surface)',
+              ink: 'var(--color-ink)',
+              sub: 'var(--color-sub)',
+              primary: {
+                DEFAULT: 'var(--color-primary)',
+                foreground: '#FFFFFF',
+                dark: '#D06348'
+              },
+              secondary: {
+                DEFAULT: 'var(--color-secondary)',
+                foreground: '#FFFFFF'
+              },
+              destructive: {
+                DEFAULT: '#E63946',
+                foreground: '#FFFFFF'
+              },
+              line: 'var(--color-line)',
+              
+              // Mapping standard Tailwind utilities to our vars
+              border: 'var(--color-line)',
+              input: 'var(--color-line)',
+              ring: 'var(--color-primary)',
+              background: 'var(--color-paper)',
+              foreground: 'var(--color-ink)',
+            },
+            fontFamily: {
+              hand: ['"Patrick Hand"', 'cursive'],
+              body: ['"Nunito"', 'sans-serif'],
+              sans: ['"Nunito"', 'sans-serif'],
+            },
+            boxShadow: {
+              'soft': '0 8px 30px rgba(0,0,0,0.04)', 
+              'hard': '3px 3px 0px 0px var(--color-shadow)',    
+              'hard-hover': '5px 5px 0px 0px var(--color-shadow)',
+            },
+            borderRadius: {
+              'cozy': '16px',
+              lg: "16px",
+              md: "12px",
+              sm: "8px",
+            },
+          },
+        },
+      }
+    </script>
+      
+  <script type="importmap">
+{
+  "imports": {
+    "clsx": "https://aistudiocdn.com/clsx@^2.1.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "tailwind-merge": "https://aistudiocdn.com/tailwind-merge@^3.4.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "class-variance-authority": "https://aistudiocdn.com/class-variance-authority@^0.7.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="font-body antialiased selection:bg-primary selection:text-white">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

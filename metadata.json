@@ -1,0 +1,5 @@
+{
+  "name": "NexUI Component Library",
+  "description": "A modern, accessible, and reusable UI component library built from scratch with React, TypeScript, Tailwind CSS, and CVA.",
+  "requestFramePermissions": []
+}
