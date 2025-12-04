@@ -1,0 +1,25 @@
+{
+  "theme": {
+    "colors": {
+      "paper": { "light": "#FDFBF7", "dark": "#1C1917" },
+      "surface": { "light": "#FFFFFF", "dark": "#292524" },
+      "ink": { "light": "#2D2D2D", "dark": "#E7E5E4" },
+      "sub": { "light": "#6B7280", "dark": "#A8A29E" },
+      "primary": { "light": "#E07A5F", "dark": "#E07A5F" },
+      "secondary": { "light": "#81B29A", "dark": "#81B29A" },
+      "line": { "light": "#E5E7EB", "dark": "#44403C" },
+      "shadow": { "light": "#2D2D2D", "dark": "#000000" }
+    },
+    "borderRadius": {
+      "cozy": "16px",
+      "lg": "16px",
+      "md": "12px",
+      "sm": "8px"
+    },
+    "boxShadow": {
+      "soft": "0 8px 30px rgba(0,0,0,0.04)",
+      "hard": "3px 3px 0px 0px var(--color-shadow)",
+      "hard-hover": "5px 5px 0px 0px var(--color-shadow)"
+    }
+  }
+}

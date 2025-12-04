@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import Cozy from './Cozy';
-
 import { Button } from './components/ui/button';
 import { Input } from './components/ui/input';
 import { Textarea } from './components/ui/textarea';
@@ -15,7 +13,7 @@ import {
   CardDescription,
   CardContent,
   CardFooter,
-} from './components/ui/card/card';
+} from './components/ui/card';
 import {
   Dialog,
   DialogContent,
@@ -109,9 +107,9 @@ const App: React.FC = () => {
   };
 
   return (
-    <>
-      <Cozy className="min-h-screen bg-paper text-ink font-body selection:bg-primary selection:text-white pb-20 transition-colors duration-300">
-        {/* Navigation */}
+    <div className="min-h-screen bg-paper text-ink font-body selection:bg-primary selection:text-white pb-20 transition-colors duration-300">
+      
+      {/* Navigation */}
       <nav className="w-full border-b border-line bg-surface/80 backdrop-blur-sm sticky top-0 z-50 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" className="font-hand text-3xl text-primary font-bold tracking-wide hover:rotate-2 transition-transform cursor-pointer">
@@ -229,11 +227,11 @@ const App: React.FC = () => {
             <h2 className="font-hand text-4xl text-ink">03. Kartlar</h2>
 
             <div className="grid md:grid-cols-3 gap-6">
-                <Card className="group bg-surface rounded-cozy border border-line shadow-soft overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer flex flex-col h-full">
-                    <CardHeader className="h-40 bg-secondary/10 relative overflow-hidden flex items-center justify-center">
+                <div className="group bg-surface rounded-cozy border border-line shadow-soft overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer flex flex-col h-full">
+                    <div className="h-40 bg-secondary/10 relative overflow-hidden flex items-center justify-center">
                         <Heart className="w-12 h-12 text-secondary/40" />
-                    </CardHeader>
-                    <CardContent className="p-6 flex flex-col flex-1">
+                    </div>
+                    <div className="p-6 flex flex-col flex-1">
                         <span className="text-xs font-bold tracking-wider text-primary uppercase mb-2 block">Blog</span>
                         <h3 className="font-hand text-2xl mb-2 group-hover:text-primary transition-colors">Minimalizm</h3>
                         <p className="text-sub text-sm leading-relaxed mb-4 flex-1">
@@ -242,16 +240,16 @@ const App: React.FC = () => {
                         <span className="text-ink font-hand text-lg flex items-center gap-1 w-max group-hover:underline decoration-wavy decoration-primary">
                           Oku <ArrowRight className="w-4 h-4" />
                         </span>
-                    </CardContent>
-                </Card>
+                    </div>
+                </div>
 
-                <Card className="bg-[#FFF8F0] dark:bg-[#2e2a27] rounded-cozy p-8 border-2 border-dashed border-primary/30 flex flex-col justify-center text-center relative h-full transition-colors duration-300">
+                <div className="bg-[#FFF8F0] dark:bg-[#2e2a27] rounded-cozy p-8 border-2 border-dashed border-primary/30 flex flex-col justify-center text-center relative h-full transition-colors duration-300">
                     <div className="text-6xl font-hand text-primary/20 absolute top-2 left-4">“</div>
                     <p className="font-hand text-2xl text-ink relative z-10 leading-snug mt-2">
                         Basitlik, karmaşıklığın en son noktasıdır.
                     </p>
                     <div className="mt-4 text-sm font-bold text-sub">- Leonardo da Vinci</div>
-                </Card>
+                </div>
 
                 <Card className="h-full flex flex-col">
                   <CardHeader>
@@ -698,11 +696,7 @@ const App: React.FC = () => {
             </p>
         </div>
       </footer>
-      </Cozy>
-      
-    </>
-
-    
+    </div>
   );
 };
 

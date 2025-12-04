@@ -19,11 +19,10 @@ const imageVariants = cva(
   }
 )
 
-export interface ImageProps
-  extends React.ImgHTMLAttributes<HTMLImageElement>,
-    VariantProps<typeof imageVariants> {
-      caption?: string
-    }
+export type ImageProps = React.ImgHTMLAttributes<HTMLImageElement> &
+  VariantProps<typeof imageVariants> & {
+    caption?: string
+  }
 
 const Image = React.forwardRef<HTMLImageElement, ImageProps>(
   ({ className, variant, caption, ...props }, ref) => {
