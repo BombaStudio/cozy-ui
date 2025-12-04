@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 
-import './style.css';
 import './theme.css';
 
 const Cozy = React.forwardRef<

@@ -179,7 +179,7 @@ const App: React.FC = () => {
               <CardContent className="space-y-6 pt-8">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div className="space-y-4">
-                        <h1>Merhaba Dünya</h1>
+                        <h1 className="font-hand text-5xl text-ink">Merhaba Dünya</h1>
                         <h2 className="font-hand text-4xl text-ink">Samimi Tasarımlar</h2>
                         <h3 className="font-hand text-3xl text-ink">UI Bileşenleri</h3>
                     </div>
