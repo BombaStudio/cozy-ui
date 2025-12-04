@@ -15,7 +15,7 @@ import {
   CardDescription,
   CardContent,
   CardFooter,
-} from './components/ui/card';
+} from './components/ui/card/card';
 import {
   Dialog,
   DialogContent,
@@ -179,7 +179,7 @@ const App: React.FC = () => {
               <CardContent className="space-y-6 pt-8">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div className="space-y-4">
-                        <h1 className="font-hand text-5xl text-ink">Merhaba Dünya</h1>
+                        <h1>Merhaba Dünya</h1>
                         <h2 className="font-hand text-4xl text-ink">Samimi Tasarımlar</h2>
                         <h3 className="font-hand text-3xl text-ink">UI Bileşenleri</h3>
                     </div>
@@ -229,11 +229,11 @@ const App: React.FC = () => {
             <h2 className="font-hand text-4xl text-ink">03. Kartlar</h2>
 
             <div className="grid md:grid-cols-3 gap-6">
-                <div className="group bg-surface rounded-cozy border border-line shadow-soft overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer flex flex-col h-full">
-                    <div className="h-40 bg-secondary/10 relative overflow-hidden flex items-center justify-center">
+                <Card className="group bg-surface rounded-cozy border border-line shadow-soft overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer flex flex-col h-full">
+                    <CardHeader className="h-40 bg-secondary/10 relative overflow-hidden flex items-center justify-center">
                         <Heart className="w-12 h-12 text-secondary/40" />
-                    </div>
-                    <div className="p-6 flex flex-col flex-1">
+                    </CardHeader>
+                    <CardContent className="p-6 flex flex-col flex-1">
                         <span className="text-xs font-bold tracking-wider text-primary uppercase mb-2 block">Blog</span>
                         <h3 className="font-hand text-2xl mb-2 group-hover:text-primary transition-colors">Minimalizm</h3>
                         <p className="text-sub text-sm leading-relaxed mb-4 flex-1">
@@ -242,8 +242,8 @@ const App: React.FC = () => {
                         <span className="text-ink font-hand text-lg flex items-center gap-1 w-max group-hover:underline decoration-wavy decoration-primary">
                           Oku <ArrowRight className="w-4 h-4" />
                         </span>
-                    </div>
-                </div>
+                    </CardContent>
+                </Card>
 
                 <Card className="bg-[#FFF8F0] dark:bg-[#2e2a27] rounded-cozy p-8 border-2 border-dashed border-primary/30 flex flex-col justify-center text-center relative h-full transition-colors duration-300">
                     <div className="text-6xl font-hand text-primary/20 absolute top-2 left-4">“</div>

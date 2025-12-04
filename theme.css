@@ -1,33 +1,33 @@
 :root {
-        /* Light Theme (Warm/Cozy) */
-        --color-paper: #FDFBF7;
-        --color-surface: #FFFFFF;
-        --color-ink: #2D2D2D;
-        --color-sub: #6B7280;
-        --color-primary: #E07A5F;
-        --color-secondary: #81B29A;
-        --color-line: #E5E7EB;
-        --color-shadow: #2D2D2D;
-      }
+  /* Light Theme (Warm/Cozy) */
+  --color-paper: #FDFBF7;
+  --color-surface: #FFFFFF;
+  --color-ink: #2D2D2D;
+  --color-sub: #6B7280;
+  --color-primary: #E07A5F;
+  --color-secondary: #81B29A;
+  --color-line: #E5E7EB;
+  --color-shadow: #2D2D2D;
+}
 
-      .dark {
-        /* Dark Theme (Warm Stone/Dark Cozy) */
-        --color-paper: #1C1917;    /* Stone 900 */
-        --color-surface: #292524;  /* Stone 800 */
-        --color-ink: #E7E5E4;      /* Stone 200 */
-        --color-sub: #A8A29E;      /* Stone 400 */
-        --color-primary: #E07A5F;  /* Keep same or slightly adjust brightness */
-        --color-secondary: #81B29A;
-        --color-line: #44403C;     /* Stone 700 */
-        --color-shadow: #000000;   /* Black shadow for dark mode */
-      }
+.dark {
+  /* Dark Theme (Warm Stone/Dark Cozy) */
+  --color-paper: #1C1917;    /* Stone 900 */
+  --color-surface: #292524;  /* Stone 800 */
+  --color-ink: #E7E5E4;      /* Stone 200 */
+  --color-sub: #A8A29E;      /* Stone 400 */
+  --color-primary: #E07A5F;  /* Keep same or slightly adjust brightness */
+  --color-secondary: #81B29A;
+  --color-line: #44403C;     /* Stone 700 */
+  --color-shadow: #000000;   /* Black shadow for dark mode */
+}
 
-      body {
-        background-color: var(--color-paper);
-        color: var(--color-ink);
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-      .smooth-transition {
-        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      }
+.smooth-transition {
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
