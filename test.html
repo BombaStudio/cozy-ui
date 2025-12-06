@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy UI Library - Konsept</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        paper: '#FDFBF7',    // Zemin: Kırık sıcak beyaz
+                        surface: '#FFFFFF',  // Kartlar: Saf beyaz
+                        ink: '#2D2D2D',      // Metin: Koyu mat gri
+                        sub: '#6B7280',      // Alt metin: Kurşun kalem grisi
+                        primary: '#E07A5F',  // Ana Renk: Kil/Mercan
+                        primaryDark: '#D06348', // Hover için koyu ton
+                        secondary: '#81B29A', // İkincil: Adaçayı yeşili
+                        line: '#E5E7EB',     // Çizgiler
+                    },
+                    fontFamily: {
+                        hand: ['"Patrick Hand"', 'cursive'],
+                        body: ['"Nunito"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 8px 30px rgba(0,0,0,0.04)', // Yumuşak derinlik
+                        'hard': '3px 3px 0px 0px #2D2D2D',     // Retro sert gölge
+                        'hard-hover': '5px 5px 0px 0px #2D2D2D', // Hover efekti
+                    },
+                    borderRadius: {
+                        'cozy': '16px', // Standarttan biraz daha yuvarlak
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Ekstra yumuşak geçişler için */
+        body {
+            background-color: #FDFBF7; /* Tailwind config'den gelmezse diye garanti */
+            color: #2D2D2D;
+        }
+        .smooth-transition {
+            transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+    </style>
+</head>
+<body class="font-body antialiased selection:bg-primary selection:text-white">
+
+    <nav class="w-full border-b border-line bg-surface/80 backdrop-blur-sm sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-hand text-3xl text-primary font-bold tracking-wide hover:rotate-2 transition-transform">
+                CozyUI.
+            </a>
+            <div class="hidden md:flex gap-8 font-hand text-xl text-ink">
+                <a href="#typography" class="hover:text-primary transition-colors">Yazı Tipleri</a>
+                <a href="#buttons" class="hover:text-primary transition-colors">Butonlar</a>
+                <a href="#cards" class="hover:text-primary transition-colors">Kartlar</a>
+                <a href="#forms" class="hover:text-primary transition-colors">Formlar</a>
+            </div>
+            <button class="bg-ink text-white font-hand text-lg px-5 py-2 rounded-cozy hover:bg-primary smooth-transition">
+                İndir
+            </button>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-24">
+
+        <section class="text-center space-y-6 pt-10">
+            <span class="inline-block px-4 py-1 rounded-full bg-secondary/20 text-secondary font-hand text-lg font-bold border border-secondary/30 rotate-[-2deg]">
+                ✨ Sade ama samimi tasarım sistemi
+            </span>
+            <h1 class="font-hand text-6xl md:text-7xl text-ink mt-4">
+                Hikayeni <span class="text-primary underline decoration-wavy decoration-2 underline-offset-8">elle yazılmış</span> gibi anlat.
+            </h1>
+            <p class="text-xl text-sub max-w-2xl mx-auto leading-relaxed">
+                Bu kütüphane, dijital soğukluğu kırmak için tasarlandı. Sıcak renkler, el yazısı başlıklar ve "kağıt üstü" hissi veren bileşenler.
+            </p>
+            <div class="flex justify-center gap-4 mt-8">
+                <button class="bg-primary text-white font-hand text-xl px-8 py-3 rounded-cozy shadow-hard hover:translate-y-[-2px] hover:shadow-hard-hover smooth-transition border-2 border-ink">
+                    Hemen Başla
+                </button>
+                <button class="bg-white text-ink font-hand text-xl px-8 py-3 rounded-cozy border-2 border-line hover:border-ink hover:bg-paper smooth-transition">
+                    Dökümantasyon
+                </button>
+            </div>
+        </section>
+
+        <hr class="border-line border-dashed border-2">
+
+        <section id="typography" class="space-y-8">
+            <div class="flex items-baseline gap-4 mb-8">
+                <h2 class="font-hand text-4xl text-ink">01. Tipografi</h2>
+                <span class="text-sub font-hand text-xl">Nunito & Patrick Hand</span>
+            </div>
+            
+            <div class="bg-surface p-8 rounded-cozy shadow-soft border border-line space-y-6">
+                <div>
+                    <h1 class="font-hand text-5xl mb-2">Başlık H1 - Merhaba Dünya</h1>
+                    <p class="text-sub text-sm">font-hand text-5xl</p>
+                </div>
+                <div>
+                    <h2 class="font-hand text-4xl mb-2">Başlık H2 - Samimi Tasarımlar</h2>
+                    <p class="text-sub text-sm">font-hand text-4xl</p>
+                </div>
+                <div>
+                    <h3 class="font-hand text-3xl mb-2">Başlık H3 - UI Bileşenleri</h3>
+                    <p class="text-sub text-sm">font-hand text-3xl</p>
+                </div>
+                <div class="pt-4 border-t border-dashed border-line">
+                    <p class="text-lg leading-relaxed">
+                        <strong class="text-primary">Gövde Metni (Body Text):</strong> Burası Nunito fontunu kullanır. Uzun yazılarda gözü yormaz. El yazısı fontları başlıkta karakter katarken, sans-serif fontlar okunabilirliği korur. Bu paragraf bir blog yazısı veya açıklama metni örneğidir.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="buttons" class="space-y-8">
+            <h2 class="font-hand text-4xl text-ink">02. Butonlar</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-surface p-8 rounded-cozy shadow-soft border border-line flex flex-col items-center gap-4">
+                    <h3 class="font-hand text-2xl text-sub mb-2">Retro/Sert Gölge</h3>
+                    
+                    <button class="w-full bg-primary text-white font-hand text-xl px-6 py-3 rounded-cozy border-2 border-ink shadow-hard active:translate-y-[3px] active:shadow-none smooth-transition">
+                        Primary Button
+                    </button>
+                    
+                    <button class="w-full bg-secondary text-white font-hand text-xl px-6 py-3 rounded-cozy border-2 border-ink shadow-hard active:translate-y-[3px] active:shadow-none smooth-transition">
+                        Secondary Button
+                    </button>
+
+                    <button class="w-full bg-white text-ink font-hand text-xl px-6 py-3 rounded-cozy border-2 border-ink shadow-hard active:translate-y-[3px] active:shadow-none smooth-transition">
+                        Outline Button
+                    </button>
+                </div>
+
+                <div class="bg-surface p-8 rounded-cozy shadow-soft border border-line flex flex-col items-center gap-4">
+                    <h3 class="font-hand text-2xl text-sub mb-2">Modern/Yumuşak</h3>
+                    
+                    <button class="w-full bg-primary/10 text-primary hover:bg-primary hover:text-white font-hand text-xl px-6 py-3 rounded-cozy smooth-transition">
+                        Soft Primary
+                    </button>
+                    
+                    <button class="w-full bg-secondary/10 text-secondary hover:bg-secondary hover:text-white font-hand text-xl px-6 py-3 rounded-cozy smooth-transition">
+                        Soft Secondary
+                    </button>
+
+                    <button class="w-full text-sub hover:text-ink font-hand text-xl px-6 py-3 underline decoration-dashed underline-offset-4">
+                        Sadece Link
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="cards" class="space-y-8">
+            <h2 class="font-hand text-4xl text-ink">03. Kartlar</h2>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="group bg-surface rounded-cozy border border-line shadow-soft overflow-hidden hover:shadow-lg smooth-transition cursor-pointer">
+                    <div class="h-48 bg-gray-100 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-secondary/20 flex items-center justify-center text-secondary font-hand text-2xl">
+                            Resim Alanı
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold tracking-wider text-primary uppercase mb-2 block">Kategori</span>
+                        <h3 class="font-hand text-2xl mb-2 group-hover:text-primary smooth-transition">Minimalist Yaşam</h3>
+                        <p class="text-sub text-sm leading-relaxed mb-4">
+                            Sadeleşmek sadece eşyaları azaltmak değil, zihni berraklaştırmaktır.
+                        </p>
+                        <span class="text-ink font-hand text-lg border-b-2 border-primary/30 group-hover:border-primary smooth-transition">Devamını Oku -></span>
+                    </div>
+                </div>
+
+                <div class="bg-[#FFF8F0] rounded-cozy p-8 border-2 border-dashed border-primary/30 flex flex-col justify-center text-center relative">
+                    <div class="text-6xl font-hand text-primary/20 absolute top-4 left-4">“</div>
+                    <p class="font-hand text-2xl text-ink relative z-10">
+                        Tasarım, nasıl göründüğü değil, nasıl hissettirdiğidir.
+                    </p>
+                    <div class="mt-4 text-sm font-bold text-sub">- Steve Jobs</div>
+                </div>
+
+                <div class="bg-surface rounded-cozy border border-line shadow-soft p-6">
+                    <h3 class="font-hand text-2xl mb-4 border-b border-line pb-2">Yapılacaklar</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-md border-2 border-secondary bg-secondary/20 text-secondary flex items-center justify-center">✓</div>
+                            <span class="text-sub line-through decoration-secondary">Kahve al</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-md border-2 border-sub hover:border-primary cursor-pointer"></div>
+                            <span class="text-ink">Kod yaz</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-md border-2 border-sub hover:border-primary cursor-pointer"></div>
+                            <span class="text-ink">Kediyi besle</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="forms" class="space-y-8 pb-20">
+            <h2 class="font-hand text-4xl text-ink">04. Formlar</h2>
+            
+            <div class="bg-surface p-8 md:p-12 rounded-cozy shadow-soft border border-line max-w-2xl mx-auto">
+                <div class="text-center mb-8">
+                    <h3 class="font-hand text-3xl mb-2">Bize Ulaşın</h3>
+                    <p class="text-sub">Sorularınızı yanıtlamaktan mutluluk duyarız.</p>
+                </div>
+
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="font-hand text-xl text-ink block ml-1">İsim</label>
+                            <input type="text" placeholder="Adınız" class="w-full bg-paper border-2 border-line rounded-xl px-4 py-3 font-body focus:outline-none focus:border-primary focus:bg-white smooth-transition placeholder-gray-400">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="font-hand text-xl text-ink block ml-1">E-posta</label>
+                            <input type="email" placeholder="ornek@site.com" class="w-full bg-paper border-2 border-line rounded-xl px-4 py-3 font-body focus:outline-none focus:border-primary focus:bg-white smooth-transition placeholder-gray-400">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="font-hand text-xl text-ink block ml-1">Konu Seçin</label>
+                        <select class="w-full bg-paper border-2 border-line rounded-xl px-4 py-3 font-body focus:outline-none focus:border-primary focus:bg-white smooth-transition cursor-pointer">
+                            <option>Genel Sorular</option>
+                            <option>Teknik Destek</option>
+                            <option>Sadece Merhaba</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="font-hand text-xl text-ink block ml-1">Mesajınız</label>
+                        <textarea rows="4" placeholder="Buraya yazabilirsiniz..." class="w-full bg-paper border-2 border-line rounded-xl px-4 py-3 font-body focus:outline-none focus:border-primary focus:bg-white smooth-transition placeholder-gray-400 resize-none"></textarea>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <input type="checkbox" id="terms" class="w-5 h-5 rounded border-2 border-sub text-primary focus:ring-primary/30 cursor-pointer accent-primary">
+                        <label for="terms" class="text-sub cursor-pointer select-none">Gizlilik politikasını kabul ediyorum.</label>
+                    </div>
+
+                    <button type="button" class="w-full bg-primary text-white font-hand text-2xl px-8 py-4 rounded-cozy shadow-hard hover:translate-y-[-2px] hover:shadow-hard-hover smooth-transition border-2 border-ink">
+                        Gönder Gitsin! 🚀
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section id="inputs" class="space-y-6">
+            <h2 class="font-hand text-4xl text-ink border-b-2 border-accent inline-block pr-4">04. Gelişmiş Inputlar</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="relative">
+                        <label class="font-hand text-lg text-ink mb-1 block">Site İçi Arama</label>
+                        <input type="text" placeholder="Ne aramıştınız?" class="w-full pl-12 pr-4 py-3 bg-surface border-2 border-line rounded-full focus:border-primary focus:outline-none focus:shadow-soft smooth-transition font-body">
+                        <svg class="w-6 h-6 text-sub absolute left-4 bottom-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+
+                    <div>
+                        <label class="font-hand text-lg text-ink mb-1 block">Rezervasyon Tarihi</label>
+                        <input type="date" class="w-full px-4 py-3 bg-paper border-2 border-line border-dashed rounded-cozy focus:border-secondary focus:bg-surface focus:outline-none smooth-transition text-sub">
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex items-center justify-between bg-surface p-4 rounded-cozy border border-line shadow-soft">
+                        <span class="font-hand text-xl">Bildirimleri Aç</span>
+                        <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-line appearance-none cursor-pointer transition-all duration-300"/>
+                            <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-line cursor-pointer transition-colors duration-300"></label>
+                        </div>
+                    </div>
+
+                    <div class="w-full">
+                        <label class="flex justify-center w-full h-32 px-4 transition bg-paper border-2 border-ink border-dashed rounded-cozy appearance-none cursor-pointer hover:border-primary focus:outline-none hover:bg-surface">
+                            <span class="flex items-center space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-sub" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" /></svg>
+                                <span class="font-hand text-lg text-sub">Dosyayı buraya sürükle</span>
+                            </span>
+                            <input type="file" name="file_upload" class="hidden">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="popups" class="space-y-6">
+            <h2 class="font-hand text-4xl text-ink border-b-2 border-accent inline-block pr-4">05. Popuplar</h2>
+            <p class="text-sub font-body">Aşağıdaki butona basarak modal penceresini test edebilirsin.</p>
+            
+            <button onclick="toggleModal('demoModal')" class="bg-ink text-white font-hand text-xl px-8 py-3 rounded-cozy shadow-hard hover:translate-y-[-2px] hover:shadow-hard-hover smooth-transition">
+                Modalı Aç ✨
+            </button>
+
+            <div id="demoModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                    <div class="fixed inset-0 bg-ink/20 backdrop-blur-sm transition-opacity" onclick="toggleModal('demoModal')"></div>
+
+                    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+                    <div class="relative inline-block align-bottom bg-paper rounded-cozy text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border-4 border-surface ring-1 ring-black/5">
+                        
+                        <div class="h-4 w-full bg-stripes-primary"></div>
+                        
+                        <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                            <div class="sm:flex sm:items-start">
+                                <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-accent/20 sm:mx-0 sm:h-10 sm:w-10 text-2xl">
+                                    🎉
+                                </div>
+                                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                    <h3 class="text-2xl font-hand font-bold text-ink" id="modal-title">Tebrikler!</h3>
+                                    <div class="mt-2">
+                                        <p class="text-sm text-sub font-body leading-relaxed">
+                                            Başarıyla bir modal penceresi açtınız. Bu tasarım, kullanıcıyı korkutmayan samimi bir uyarı penceresidir. Köşeler yuvarlak, fontlar yumuşak.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse gap-2">
+                            <button type="button" class="w-full inline-flex justify-center rounded-xl border border-transparent shadow-sm px-6 py-3 bg-primary text-base font-hand font-bold text-white hover:bg-primary/90 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm smooth-transition" onclick="toggleModal('demoModal')">
+                                Harika
+                            </button>
+                            <button type="button" class="mt-3 w-full inline-flex justify-center rounded-xl border border-line shadow-sm px-6 py-3 bg-white text-base font-hand font-bold text-ink hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm smooth-transition" onclick="toggleModal('demoModal')">
+                                Kapat
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="charts" class="space-y-6">
+            <h2 class="font-hand text-4xl text-ink border-b-2 border-accent inline-block pr-4">06. Grafikler</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-surface p-6 rounded-cozy shadow-soft border border-line relative overflow-hidden">
+                    <div class="flex justify-between items-end mb-4">
+                        <div>
+                            <p class="text-sub text-sm font-bold uppercase tracking-wide">Toplam Gelir</p>
+                            <h3 class="font-hand text-4xl text-ink">₺12,450.00</h3>
+                        </div>
+                        <span class="px-3 py-1 bg-secondary/20 text-secondary text-sm font-bold rounded-lg font-hand">+%15.2 🚀</span>
+                    </div>
+                    <canvas id="stockChart" height="200"></canvas>
+                </div>
+
+                <div class="bg-surface p-6 rounded-cozy shadow-soft border border-line">
+                    <h3 class="font-hand text-2xl text-ink mb-4">Kullanıcı Dağılımı</h3>
+                    <canvas id="barChart" height="200"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="full-form" class="space-y-6">
+            <h2 class="font-hand text-4xl text-ink border-b-2 border-accent inline-block pr-4">07. Hesap Ayarları</h2>
+            
+            <div class="bg-surface rounded-cozy shadow-lg border border-line overflow-hidden max-w-3xl mx-auto">
+                <div class="bg-paper p-6 border-b border-line flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-accent border-4 border-white shadow-md flex items-center justify-center text-3xl">
+                        🦊
+                    </div>
+                    <div>
+                        <h3 class="font-hand text-2xl">Profil Bilgileri</h3>
+                        <p class="text-sub text-sm">Buradan kişisel bilgilerini güncelleyebilirsin.</p>
+                    </div>
+                </div>
+
+                <div class="p-8 space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="font-hand text-lg text-ink">Ad Soyad</label>
+                            <input type="text" value="Mert Örnek" class="w-full px-4 py-2 border-2 border-line rounded-xl focus:border-primary focus:outline-none transition-colors">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="font-hand text-lg text-ink">Kullanıcı Adı</label>
+                            <div class="flex">
+                                <span class="bg-paper border-2 border-r-0 border-line rounded-l-xl px-3 py-2 text-sub font-hand">@</span>
+                                <input type="text" value="mert_code" class="w-full px-4 py-2 border-2 border-line rounded-r-xl focus:border-primary focus:outline-none transition-colors">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="font-hand text-lg text-ink">Biyografi</label>
+                        <textarea rows="3" class="w-full px-4 py-2 border-2 border-line rounded-xl focus:border-primary focus:outline-none transition-colors resize-none">Merhaba! Ben UI tasarımları yapmayı seven bir geliştiriciyim.</textarea>
+                        <p class="text-xs text-sub text-right">140 karakter kaldı</p>
+                    </div>
+                </div>
+
+                <div class="bg-paper/50 p-6 border-t border-line flex justify-end gap-3">
+                    <button class="px-6 py-2 rounded-xl font-hand text-sub hover:text-ink transition-colors">İptal</button>
+                    <button class="px-6 py-2 bg-primary text-white rounded-xl font-hand shadow-hard hover:shadow-hard-hover hover:-translate-y-1 transition-all border border-ink">Kaydet</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="space-y-6 pb-20">
+            <h2 class="font-hand text-4xl text-ink border-b-2 border-accent inline-block pr-4">08. Görseller</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
+                
+                <div class="bg-white p-4 pb-12 shadow-polaroid rotate-[-2deg] hover:rotate-0 hover:scale-105 smooth-transition border border-gray-100 cursor-pointer relative">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-8 bg-yellow-100/60 rotate-2 backdrop-blur-sm border-l border-r border-white/50"></div>
+                    
+                    <div class="aspect-square bg-gray-100 mb-4 overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover" alt="Desk setup">
+                    </div>
+                    <p class="font-hand text-2xl text-center text-ink">Çalışma Masam</p>
+                    <span class="block text-center text-xs text-sub font-hand mt-1">2025, İzmir</span>
+                </div>
+
+                <div class="bg-white p-4 pb-12 shadow-polaroid rotate-[1deg] hover:rotate-0 hover:scale-105 smooth-transition border border-gray-100 cursor-pointer z-10 relative">
+                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-8 bg-green-100/60 rotate-[-1deg] backdrop-blur-sm"></div>
+
+                    <div class="aspect-square bg-gray-100 mb-4 overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover" alt="Coffee">
+                    </div>
+                    <p class="font-hand text-2xl text-center text-ink">Sabah Kahvesi ☕</p>
+                </div>
+
+                <div class="bg-white p-4 pb-12 shadow-polaroid rotate-[-1deg] hover:rotate-0 hover:scale-105 smooth-transition border border-gray-100 cursor-pointer relative">
+                    <div class="aspect-square bg-gray-100 mb-4 overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover" alt="Design">
+                    </div>
+                    <p class="font-hand text-2xl text-center text-ink">Fikirler</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // --- Modal Kontrolü ---
+        function toggleModal(modalID) {
+            document.getElementById(modalID).classList.toggle("hidden");
+            document.getElementById(modalID).classList.toggle("flex");
+        }
+
+        // --- Chart.js Konfigürasyonu ---
+        // Font varsayılanlarını bizim fontlara ayarlayalım
+        Chart.defaults.font.family = "'Nunito', sans-serif";
+        Chart.defaults.color = '#6B7280';
+        
+        // 1. Hisse/Finans Grafiği (Line Chart)
+        const ctxStock = document.getElementById('stockChart').getContext('2d');
+        
+        // Gradyan oluşturma (Yeşil tonlu, samimi)
+        let gradient = ctxStock.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, 'rgba(129, 178, 154, 0.5)'); // Sage rengi opak
+        gradient.addColorStop(1, 'rgba(129, 178, 154, 0.0)'); // Sage rengi saydam
+
+        const stockChart = new Chart(ctxStock, {
+            type: 'line',
+            data: {
+                labels: ['Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt', 'Paz'],
+                datasets: [{
+                    label: 'Haftalık Kazanç',
+                    data: [120, 190, 150, 220, 200, 280, 310],
+                    borderColor: '#81B29A', // Sage
+                    backgroundColor: gradient,
+                    borderWidth: 3,
+                    pointBackgroundColor: '#FFFFFF',
+                    pointBorderColor: '#81B29A',
+                    pointBorderWidth: 2,
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    fill: true,
+                    tension: 0.4 // Çizgiyi yumuşatır (curvy)
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#2D2D2D',
+                        titleFont: { family: "'Patrick Hand'", size: 16 },
+                        bodyFont: { family: "'Nunito'", size: 14 },
+                        padding: 12,
+                        cornerRadius: 8,
+                        displayColors: false
+                    }
+                },
+                scales: {
+                    x: { grid: { display: false }, border: { display: false } },
+                    y: { grid: { borderDash: [5, 5], color: '#E5E7EB' }, border: { display: false }, beginAtZero: true }
+                }
+            }
+        });
+
+        // 2. Bar Grafik
+        const ctxBar = document.getElementById('barChart').getContext('2d');
+        const barChart = new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: ['Ocak', 'Şubat', 'Mart', 'Nisan'],
+                datasets: [{
+                    label: 'Ziyaretçiler',
+                    data: [65, 59, 80, 81],
+                    backgroundColor: [
+                        '#E07A5F', // Primary
+                        '#F2CC8F', // Accent
+                        '#81B29A', // Secondary
+                        '#2D2D2D'  // Ink
+                    ],
+                    borderRadius: 8,
+                    borderSkipped: false,
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

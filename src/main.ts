@@ -1,25 +1,12 @@
-/*import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+var navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/docs/docs.html', label: 'Docs' },
+  { href: '/examples/examples.html', label: 'Examples' }
+  
+];
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
-
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
-*/
+navLinks.forEach(link => {
+  document.querySelector<HTMLDivElement>('#navLinks')!.innerHTML += `
+    <a href="${link.href}" class="navLink">${link.label}</a>
+  `;
+});
