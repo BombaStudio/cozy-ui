@@ -1,12 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* 1. Bu satırı en üste ekleyin. 
+   Bu, CSS dosyasının projenin ana dizinindeki config dosyasını okumasını sağlar. */
+@config "../tailwind.config.js";
 
-body {
-  background-color: var(--color-paper, #FDFBF7);
-  color: var(--color-ink, #2D2D2D);
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* 2. Tailwind v4 için modern import yöntemi (v3 direktifleri yerine bunu kullanmanız önerilir) */
+@import "tailwindcss";
+
+/* Eski v3 direktiflerini (@tailwind base; vb.) silebilirsiniz, 
+   yukarıdaki @import "tailwindcss"; hepsini kapsar. */
+
+@layer base {
+  body {
+    /* Renk tanımlarını config'den çekmek için theme() fonksiyonu kullanabilirsiniz */
+    background-color: var(--color-paper, #FDFBF7);
+    color: var(--color-ink, #2D2D2D);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  h1 {
+    /* Artık font-hand sınıfı tanınacaktır */
+    @apply font-hand text-5xl text-ink;
+  }
 }
-h1 {
-  @apply font-hand text-5xl text-ink;
+
+.smooth-transition {
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
+#root { opacity: 0; transition: opacity 0.5s ease; }
+#root.loaded { opacity: 1; }
