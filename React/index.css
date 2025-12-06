@@ -10,6 +10,9 @@
     color: var(--color-ink, #2D2D2D);
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+  h1 {
+    @apply font-hand text-5xl text-ink;
+  }
 }
 
 .smooth-transition {
