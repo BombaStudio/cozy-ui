@@ -14,10 +14,14 @@
     background-color: var(--color-paper, #FDFBF7);
     color: var(--color-ink, #2D2D2D);
     transition: background-color 0.3s ease, color 0.3s ease;
+    @apply min-h-screen font-body selection:bg-primary selection:text-white pb-20;
   }
   h1 {
     /* Artık font-hand sınıfı tanınacaktır */
     @apply font-hand text-5xl text-ink;
+  }
+  nav {
+    @apply w-full border-b border-line bg-surface/80 backdrop-blur-sm sticky top-0 z-50 transition-colors duration-300;
   }
 }
 

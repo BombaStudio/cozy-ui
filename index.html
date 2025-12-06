@@ -5,10 +5,53 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>cozy-ui</title>
+    
+    <style>
+      :root {
+        /* Light Theme (Warm/Cozy) */
+        --color-paper: #FDFBF7;
+        --color-surface: #FFFFFF;
+        --color-ink: #2D2D2D;
+        --color-sub: #6B7280;
+        --color-primary: #E07A5F;
+        --color-secondary: #81B29A;
+        --color-line: #E5E7EB;
+        --color-shadow: #2D2D2D;
+      }
+
+      .dark {
+        /* Dark Theme (Warm Stone/Dark Cozy) */
+        --color-paper: #1C1917;    /* Stone 900 */
+        --color-surface: #292524;  /* Stone 800 */
+        --color-ink: #E7E5E4;      /* Stone 200 */
+        --color-sub: #A8A29E;      /* Stone 400 */
+        --color-primary: #E07A5F;  /* Keep same or slightly adjust brightness */
+        --color-secondary: #81B29A;
+        --color-line: #44403C;     /* Stone 700 */
+        --color-shadow: #000000;   /* Black shadow for dark mode */
+      }
+    </style>
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <div id="app" className="min-h-screen bg-paper text-ink font-body selection:bg-primary selection:text-white pb-20 transition-colors duration-300">
+    <div id="app" class="">
+      <nav>
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <a href="#" class="font-hand text-3xl text-primary font-bold tracking-wide hover:rotate-2 transition-transform cursor-pointer">
+                CozyUI.
+            </a>
+            <div class="hidden xl:flex gap-5 font-hand text-xl text-ink items-center">
+                <a href="#typography" class="hover:text-primary transition-colors">Yazı</a>
+                <a href="#buttons" class="hover:text-primary transition-colors">Buton</a>
+                <a href="#cards" class="hover:text-primary transition-colors">Kart</a>
+                <a href="#inputs" class="hover:text-primary transition-colors">Girdi</a>
+                <a href="#popups" class="hover:text-primary transition-colors">Popup</a>
+                <a href="#charts" class="hover:text-primary transition-colors">Grafik</a>
+                <a href="#forms" class="hover:text-primary transition-colors">Form</a>
+                <a href="#images" class="hover:text-primary transition-colors">Görsel</a>
+            </div>
+        </div>
+      </nav>
       <h1 class="m-10">Welcome to cozy-ui!</h1>
     </div>
     <script type="module" src="/src/main.ts"></script>
