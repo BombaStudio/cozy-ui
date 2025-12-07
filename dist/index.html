@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cozy-ui</title>
+    
+    <style>
+      
+      :root {
+        /* Light Theme (Warm/Cozy) */
+        --color-paper: #FDFBF7;
+        --color-surface: #FFFFFF;
+        --color-ink: #2D2D2D;
+        --color-sub: #6B7280;
+        --color-primary: #E07A5F;
+        --color-secondary: #81B29A;
+        --color-line: #E5E7EB;
+        --color-shadow: #2D2D2D;
+      }
+
+      .dark {
+        /* Dark Theme (Warm Stone/Dark Cozy) */
+        --color-paper: #1C1917;    /* Stone 900 */
+        --color-surface: #292524;  /* Stone 800 */
+        --color-ink: #E7E5E4;      /* Stone 200 */
+        --color-sub: #A8A29E;      /* Stone 400 */
+        --color-primary: #E07A5F;  /* Keep same or slightly adjust brightness */
+        --color-secondary: #81B29A;
+        --color-line: #44403C;     /* Stone 700 */
+        --color-shadow: #000000;   /* Black shadow for dark mode */
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-Cg81VvcV.js"></script>
+    <link rel="stylesheet" crossorigin href="/cozy-ui.css">
+  </head>
+  <body>
+    <nav>
+      <div class="navBase">
+        <a href="#" class="navHeader">
+              CozyUI.
+          </a>
+          <div id="navLinks" class="navLinks">
+          </div>
+      </div>
+    </nav>
+    <main>
+      <h1 class="m-10">Welcome to <span class="text-primary">CozyUI</span> !</h1>
+      <p>
+        Modern, accessible, and customizable UI component library built with Tailwind CSS and TypeScript.
+      </p>
+      <secttion id="typography">
+        <h2>1. Tipografi</h2>
+        <div class="card m-5">
+          <div class="cardHeader">
+            <h1 class="text-3xl font-hand text-ink">Header 1</h1>
+          </div>
+          <div class="cardFooter">
+            <p>sdfhbg</p>
+          </div>
+        </div>
+      </secttion>
+      <section id="forms">
+        <h2 class="font-hand text-4xl text-ink">04. Formlar</h2>
+        <div class="card">
+          <div class="cardHeader">
+            <h3 class="text-2xl font-hand text-ink">Giriş Formu</h3>
+          </div>
+          <form>
+            <div class="cardBody p-5">
+              <div class="grid md:grid-cols-2 gap-6">
+                  <div class="space-y-2">
+                      <label>İsim</label>
+                      <input type="text" placeholder="Adınız">
+                  </div>
+                  <div class="space-y-2">
+                      <label>E-posta</label>
+                      <input type="email" placeholder="ornek@site.com">
+                  </div>
+              </div>
+              <div class="space-y-2 py-5">
+                  <label>Konu Seçin</label>
+                  <select class="">
+                      <option>Genel Sorular</option>
+                      <option>Teknik Destek</option>
+                      <option>Sadece Merhaba</option>
+                  </select>
+              </div>
+              <div class="space-y-2 py-5">
+                  <label class="font-hand text-xl text-ink block ml-1">Mesajınız</label>
+                  <textarea rows="4" placeholder="Buraya yazabilirsiniz..." ></textarea>
+              </div>
+
+              <div class="flex items-center gap-3 py-5">
+                  <input type="checkbox" id="terms" class="">
+                  <label for="terms" class="text-sub cursor-pointer select-none">Gizlilik politikasını kabul ediyorum.</label>
+              </div>
+            </div>
+            <div class="cardFooter">
+              <button type="button" class="btn-primary px-5 py-3">
+                Gönder Gitsin! 🚀
+              </button>
+            </div>
+              
+            </form>
+        </div>
+      </section>
+      
+    </main>
+    
+  </body>
+</html>
