@@ -60,6 +60,51 @@
           </div>
         </div>
       </secttion>
+      <section id="forms">
+        <h2 class="font-hand text-4xl text-ink">04. Formlar</h2>
+        <div class="card">
+          <div class="cardHeader">
+            <h3 class="text-2xl font-hand text-ink">Giriş Formu</h3>
+          </div>
+          <form>
+            <div class="cardBody p-5">
+              <div class="grid md:grid-cols-2 gap-6">
+                  <div class="space-y-2">
+                      <label>İsim</label>
+                      <input type="text" placeholder="Adınız">
+                  </div>
+                  <div class="space-y-2">
+                      <label>E-posta</label>
+                      <input type="email" placeholder="ornek@site.com">
+                  </div>
+              </div>
+              <div class="space-y-2 py-5">
+                  <label>Konu Seçin</label>
+                  <select class="">
+                      <option>Genel Sorular</option>
+                      <option>Teknik Destek</option>
+                      <option>Sadece Merhaba</option>
+                  </select>
+              </div>
+              <div class="space-y-2 py-5">
+                  <label class="font-hand text-xl text-ink block ml-1">Mesajınız</label>
+                  <textarea rows="4" placeholder="Buraya yazabilirsiniz..." ></textarea>
+              </div>
+
+              <div class="flex items-center gap-3 py-5">
+                  <input type="checkbox" id="terms" class="">
+                  <label for="terms" class="text-sub cursor-pointer select-none">Gizlilik politikasını kabul ediyorum.</label>
+              </div>
+            </div>
+            <div class="cardFooter">
+              <button type="button" class="btn-primary px-5 py-3">
+                Gönder Gitsin! 🚀
+              </button>
+            </div>
+              
+            </form>
+        </div>
+      </section>
       
     </main>
     

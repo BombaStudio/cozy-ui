@@ -113,6 +113,26 @@
     @apply border-t border-line border-dashed p-8 pt-6 bg-surface/50 ;
   }
 
+  input {
+    @apply w-full bg-paper border-2 border-line rounded-xl px-4 py-3 font-body focus:outline-none focus:border-primary focus:bg-white placeholder-gray-400;
+
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  input[type="checkbox"] {
+    @apply w-5 h-5;
+  }
+  label {
+    @apply font-hand text-xl text-ink block ml-1;
+  }
+  select {
+    @apply w-full bg-paper border-2 border-line rounded-xl px-4 py-3 font-body focus:outline-none focus:border-primary focus:bg-white cursor-pointer;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  textarea {
+    @apply w-full bg-paper border-2 border-line rounded-xl px-4 py-3 font-body focus:outline-none focus:border-primary focus:bg-white placeholder-gray-400 resize-none;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
 }
 
 .smooth-transition {
